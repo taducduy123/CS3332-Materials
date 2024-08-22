@@ -17,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="755.0" prefWidth="897.0" stylesheets="@../../../primer-light.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controllers.BookManagementController">
+<AnchorPane prefHeight="755.0" prefWidth="897.0" stylesheets="@../../../primer-light.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controllers.BookManagementController">
    <children>
       <TableView fx:id="tbBooks" layoutY="96.0" onMouseClicked="#fillToTextField" prefHeight="367.0" prefWidth="897.0">
         <columns>
@@ -167,7 +167,7 @@
                   <Font name="System Bold" size="17.0" />
                </font>
             </Label>
-            <TextField fx:id="txtSearch" onKeyPressed="#onSearch" prefHeight="36.0" prefWidth="182.0" GridPane.columnIndex="1" />
+            <TextField fx:id="txtSearch" onKeyPressed="#onSearch" prefHeight="36.0" prefWidth="182.0" promptText="ID, Name, Author, Category" GridPane.columnIndex="1" />
          </children>
       </GridPane>
       <GridPane fx:id="grForReader" layoutX="261.0" layoutY="610.0" prefHeight="64.0" prefWidth="376.0">
