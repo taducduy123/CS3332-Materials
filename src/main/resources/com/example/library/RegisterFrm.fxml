@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="499.0" prefWidth="683.0" stylesheets="@../../../primer-light.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controllers.RegisterController">
+   <children>
+      <ImageView fitHeight="187.0" fitWidth="208.0" layoutX="24.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/user-interface.png" />
+         </image>
+      </ImageView>
+      <GridPane layoutX="253.0" layoutY="92.0" prefHeight="316.0" prefWidth="420.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="154.5" minWidth="10.0" prefWidth="119.5" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="212.0" minWidth="10.0" prefWidth="200.5" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="55.5" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="73.0" minHeight="10.0" prefHeight="57.5" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="69.5" minHeight="10.0" prefHeight="49.5" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="69.5" minHeight="10.0" prefHeight="49.5" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="69.5" minHeight="10.0" prefHeight="49.5" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="69.5" minHeight="10.0" prefHeight="49.5" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="69.5" minHeight="10.0" prefHeight="49.5" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="69.5" minHeight="10.0" prefHeight="49.5" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Username:" />
+            <Label text="Password:" GridPane.rowIndex="1" />
+            <Label text="Re-password:" GridPane.rowIndex="2" />
+            <TextField fx:id="txtTaiKhoan" promptText="Enter username..." GridPane.columnIndex="1" />
+            <PasswordField fx:id="pwMatKhau" promptText="Enter password..." GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <PasswordField fx:id="pwReMatKhau" promptText="Re-enter password..." GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Fullname:" GridPane.rowIndex="3" />
+            <Label text="Phone number:" GridPane.rowIndex="4" />
+            <Label text="Email:" GridPane.rowIndex="5" />
+            <Label text="Address:" GridPane.rowIndex="6" />
+            <Label text="Dob:" GridPane.rowIndex="7" />
+            <TextField fx:id="txtFullname" promptText="Enter fullname..." GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="txtPhoneNumber" promptText="Enter phone number...." GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="txtEmail" promptText="Enter email..." GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="txtAddress" promptText="Enter address..." GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <DatePicker fx:id="dpDob" promptText="Choose dob" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+         </children>
+      </GridPane>
+      <Label layoutX="380.0" layoutY="25.0" text="Sign Up">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Button layoutX="335.0" layoutY="440.0" mnemonicParsing="false" onAction="#onClickRegister" prefHeight="25.0" prefWidth="125.0" text="Sign Up" />
+   </children>
+</AnchorPane>

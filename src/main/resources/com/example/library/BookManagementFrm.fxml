@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="755.0" prefWidth="897.0" stylesheets="@../../../primer-light.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controllers.BookManagementController">
+   <children>
+      <TableView fx:id="tbBooks" layoutY="96.0" onMouseClicked="#fillToTextField" prefHeight="367.0" prefWidth="897.0">
+        <columns>
+          <TableColumn fx:id="colBookId" prefWidth="120.0" text="Book ID">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/tabel.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </TableColumn>
+          <TableColumn fx:id="colBookName" prefWidth="156.0" text="Book Name">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/tabel.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </TableColumn>
+            <TableColumn fx:id="colAuthorName" prefWidth="143.0" text="Author">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/tabel.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </TableColumn>
+            <TableColumn fx:id="colCategory" prefWidth="137.0" text="Category">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/tabel.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </TableColumn>
+            <TableColumn fx:id="colQuantity" prefWidth="119.5" text="Quantity">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/tabel.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </TableColumn>
+            <TableColumn fx:id="colPublishDate" prefWidth="218.2222900390625" text="Publish Date">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/tabel.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </TableColumn>
+        </columns>
+      </TableView>
+      <GridPane layoutX="36.0" layoutY="477.0" prefHeight="163.0" prefWidth="386.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.5" minWidth="10.0" prefWidth="88.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="337.0" minWidth="10.0" prefWidth="220.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Text fx:id="lbBookId" strokeType="OUTSIDE" strokeWidth="0.0" text="Book ID:" />
+            <Text fx:id="lbBookName" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Name:" GridPane.rowIndex="1" />
+            <Text fx:id="lbAuthor" strokeType="OUTSIDE" strokeWidth="0.0" text="Author:" GridPane.rowIndex="2" />
+            <TextField fx:id="txtBookId" editable="false" GridPane.columnIndex="1" />
+            <TextField fx:id="txtBookName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="165.0" minWidth="10.0" prefWidth="143.99996609157986" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.00000678168402" minWidth="10.0" prefWidth="115.55558946397568" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ComboBox fx:id="cbAuthor" prefWidth="150.0" />
+                  <TextField fx:id="txtAuthor" prefHeight="36.0" prefWidth="155.0" />
+                  <Button fx:id="btnAddAuthor" mnemonicParsing="false" onAction="#onClickAddAuthor" prefHeight="36.0" prefWidth="116.0" text="Add Author" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Button>
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+      <GridPane layoutX="433.0" layoutY="477.0" prefHeight="163.0" prefWidth="412.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.5" minWidth="10.0" prefWidth="88.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="337.0" minWidth="10.0" prefWidth="220.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Text fx:id="lbCategory" strokeType="OUTSIDE" strokeWidth="0.0" text="Category:" />
+            <Text fx:id="lbQuantity" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity:" wrappingWidth="62.1240234375" GridPane.rowIndex="1" />
+            <Text fx:id="lbPublishDate" strokeType="OUTSIDE" strokeWidth="0.0" text="Publish Date:" GridPane.rowIndex="2" />
+            <TextField fx:id="txtQuantity" prefHeight="36.0" prefWidth="183.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <DatePicker fx:id="dpPublish" prefHeight="36.0" prefWidth="275.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <GridPane GridPane.columnIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.5" minWidth="10.0" prefWidth="123.55546061197916" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="144.8889838324653" minWidth="10.0" prefWidth="144.8889838324653" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ComboBox fx:id="cbCategory" prefWidth="150.0" />
+                  <Button fx:id="btnAddCategory" mnemonicParsing="false" onAction="#onClickAddCategory" prefHeight="36.0" prefWidth="133.0" text="Add Category" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <TextField fx:id="txtCategory" prefHeight="36.0" prefWidth="133.0" />
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+      <Button fx:id="btnAdd" layoutX="66.0" layoutY="684.0" mnemonicParsing="false" onAction="#onClickAdd" prefHeight="36.0" prefWidth="106.0" text="Add Book" />
+      <Button fx:id="btnDelete" layoutX="573.0" layoutY="684.0" mnemonicParsing="false" onAction="#onClickDelete" prefHeight="36.0" prefWidth="106.0" text="Delete Book" />
+      <Button fx:id="btnUpdate" layoutX="226.0" layoutY="684.0" mnemonicParsing="false" onAction="#onClickUpdate" prefHeight="36.0" prefWidth="106.0" text="Update Book" />
+      <Button fx:id="btnRefresh" layoutX="395.0" layoutY="684.0" mnemonicParsing="false" onAction="#onClickRefresh" prefHeight="36.0" prefWidth="106.0" text="Refresh" />
+      <GridPane layoutX="10.0" layoutY="14.0" prefHeight="30.0" prefWidth="301.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="147.0" minWidth="10.0" prefWidth="74.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="327.0" minWidth="10.0" prefWidth="227.5" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="26.0" prefWidth="91.0" text="Search:">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtSearch" onKeyPressed="#onSearch" prefHeight="36.0" prefWidth="182.0" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+      <GridPane fx:id="grForReader" layoutX="261.0" layoutY="610.0" prefHeight="64.0" prefWidth="376.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Return date:" />
+            <DatePicker fx:id="dpReturn" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+      <Button fx:id="btnRequestBorrow" layoutX="573.0" layoutY="684.0" mnemonicParsing="false" onAction="#onClickRequest" prefHeight="36.0" prefWidth="127.0" text="Request Borrow" />
+   </children>
+</AnchorPane>

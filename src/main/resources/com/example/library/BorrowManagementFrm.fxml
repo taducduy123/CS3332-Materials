@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="755.0" prefWidth="847.0" stylesheets="@../../../primer-light.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controllers.BorrowManagementController">
+   <children>
+      <TableView fx:id="tbBorrows" layoutY="81.0" onMouseClicked="#onSelected" prefHeight="313.0" prefWidth="847.0">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="75.0" text="ID">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/tabel.png" />
+                     </image>
+                  </ImageView>
+               </graphic></TableColumn>
+          <TableColumn fx:id="colBookName" prefWidth="133.5" text="Tên sách">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/tabel.png" />
+                     </image>
+                  </ImageView>
+               </graphic></TableColumn>
+            <TableColumn fx:id="colReaderName" prefWidth="128.5" text="Tên độc giả">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/tabel.png" />
+                     </image>
+                  </ImageView>
+               </graphic></TableColumn>
+            <TableColumn fx:id="colBorrowDate" prefWidth="160.5" text="Ngày mượn">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/tabel.png" />
+                     </image>
+                  </ImageView>
+               </graphic></TableColumn>
+            <TableColumn fx:id="colReturnDate" prefWidth="166.0" text="Ngày hẹn trả">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/tabel.png" />
+                     </image>
+                  </ImageView>
+               </graphic></TableColumn>
+            <TableColumn fx:id="colDueDate" prefWidth="182.5" text="Ngày trả">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/tabel.png" />
+                     </image>
+                  </ImageView>
+               </graphic></TableColumn>
+        </columns>
+      </TableView>
+      <GridPane layoutX="287.0" layoutY="459.0" prefHeight="227.0" prefWidth="300.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.5" minWidth="10.0" prefWidth="93.5" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="216.5" minWidth="10.0" prefWidth="206.5" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Mã độc giả:" GridPane.rowIndex="1" />
+            <Label text="Mã sách:" GridPane.rowIndex="3" />
+            <Label text="Ngày hẹn trả:" GridPane.rowIndex="5" />
+            <ComboBox fx:id="cbReaderId" onAction="#onChooseReaderId" prefHeight="36.0" prefWidth="224.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ComboBox fx:id="cbBookId" onAction="#onChooseBookId" prefHeight="36.0" prefWidth="221.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <DatePicker fx:id="dpReturnDate" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label fx:id="lbReaderName" text="Label" GridPane.columnIndex="1" />
+            <Label fx:id="lbBookName" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <Button layoutX="664.0" layoutY="573.0" mnemonicParsing="false" onAction="#onClickBorrow" prefHeight="36.0" prefWidth="102.0" text="Mượn sách" />
+      <GridPane layoutX="114.0" layoutY="26.0" prefHeight="30.0" prefWidth="289.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.5" minWidth="10.0" prefWidth="73.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="216.0" minWidth="10.0" prefWidth="216.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ComboBox fx:id="cbFilterLate" onAction="#onChooseFilter" prefHeight="36.0" prefWidth="169.0" GridPane.columnIndex="1" />
+            <Label text="Lọc" />
+         </children>
+      </GridPane>
+      <Button layoutX="664.0" layoutY="631.0" mnemonicParsing="false" onAction="#onClickRefresh" prefHeight="36.0" prefWidth="102.0" text="Làm mới" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="826.0" prefWidth="1144.0" stylesheets="@../../../primer-light.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controllers.DashboardController">
+   <children>
+      <ListView fx:id="lstMenu" layoutY="43.0" onMouseClicked="#onSelected" prefHeight="782.0" prefWidth="227.0" />
+      <AnchorPane fx:id="pane" layoutX="227.0" layoutY="43.0" prefHeight="782.0" prefWidth="917.0" />
+      <MenuBar prefHeight="40.0" prefWidth="1144.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="System">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onClickLogout" text="Logout" />
+                  <MenuItem mnemonicParsing="false" onAction="#onClickChangePassword" text="Change password" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

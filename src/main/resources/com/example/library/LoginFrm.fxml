@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="378.0" prefWidth="640.0" stylesheets="@../../../primer-light.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.library.controllers.LoginController">
+   <children>
+      <Label layoutX="306.0" layoutY="115.0" text="Username:" />
+      <Label layoutX="306.0" layoutY="166.0" text="Password:" />
+      <TextField fx:id="txtTaiKhoan" layoutX="394.0" layoutY="111.0" promptText="Enter username..." />
+      <PasswordField fx:id="pwMatKhau" layoutX="393.0" layoutY="162.0" promptText="Enter password..." />
+      <Button defaultButton="true" layoutX="381.0" layoutY="223.0" mnemonicParsing="false" onAction="#onClickLogin" prefHeight="25.0" prefWidth="125.0" text="Login" />
+      <ImageView fitHeight="179.0" fitWidth="214.0" layoutX="57.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/profile.png" />
+         </image>
+      </ImageView>
+      <Hyperlink layoutX="390.0" layoutY="259.0" onAction="#onClickRegister" text="Create new account" />
+      <ComboBox fx:id="cbRole" layoutX="394.0" layoutY="65.0" prefHeight="36.0" prefWidth="181.0" />
+      <Label layoutX="306.0" layoutY="73.0" text="You are:" />
+      <Hyperlink layoutX="381.0" layoutY="281.0" onAction="#onClickResetPassword" text="Forgot your password?" />
+   </children>
+</AnchorPane>
+
